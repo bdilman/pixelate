@@ -46,12 +46,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('img_path')
     parser.add_argument('save_path')
-    parser.add_argument('n_colors', default=10 , nargs="?")
-    parser.add_argument('superpixel_size', default=10, nargs="?")
+    parser.add_argument('n_colors', default=25 , nargs="?")
+    parser.add_argument('superpixel_size', default=25, nargs="?")
     parser.add_argument('saturation', default=1.25 , nargs="?")
-    parser.add_argument('contrast', default=1.2 , nargs="?")
+    parser.add_argument('contrast', default=1.5 , nargs="?")
     kwargs = vars(parser.parse_args())
 
-    print type(kwargs)
+    print( type(kwargs))
 
     pixellize(**kwargs)
