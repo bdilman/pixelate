@@ -22,6 +22,10 @@ It was tested using Pillow 4.0.0 and numpy 1.12.1.
 
 ## Use Case
 
+`python3 main.py examples/aaa.jpg examples/aaa_12.png`
+
+` B edit parameter allocation is buggy `
+
 `python main.py imgs/test.png pixelated/test.png -n 10 -p 10 -s 1.25 -c 1.2`
 
 `n` is the amount of colors wanted for the output. Small numbers typically give better results.
