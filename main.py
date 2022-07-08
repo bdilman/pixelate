@@ -63,7 +63,7 @@ def pixellize(**kwargs):
         print("___Pixelate___ : superpixel param defines size", reduced_size)    
         img = img.resize(reduced_size, Image.BICUBIC)
         img.save(save)
-    elif define_new_size == 2:
+    elif define_new_size == 2 and new_dim_x is not None:
         ## B, non-rectangular shapes work as well
         print("___Pixelate___ : user defined img size", new_dim_x,new_dim_y )
         #Function Call for resizing image.
@@ -90,8 +90,8 @@ if __name__ == "__main__":
     parser.add_argument('--saturation', default=1.5 , required=True, nargs="?")
     parser.add_argument('--contrast', default=1.7 , required=True, nargs="?")
     parser.add_argument('--new_size', default=0 , required=True, nargs="?")
-    parser.add_argument('--new_x_dim', default=32 , required=True, nargs="?")
-    parser.add_argument('--new_y_dim', default=32 , required=True, nargs="?")
+    parser.add_argument('--new_x_dim', default=32 , required=False, nargs="?")
+    parser.add_argument('--new_y_dim', default=32 , required=False, nargs="?")
 
 
     kwargs = vars(parser.parse_args())
