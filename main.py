@@ -37,7 +37,6 @@ def pixellize(**kwargs):
 
     #### B_edit:
     
-    
     ## resize image with given image size 
     # 0: original
     # 1: superpixel size defines output image size
@@ -56,28 +55,22 @@ def pixellize(**kwargs):
         img = img.resize(reduced_size, Image.BICUBIC)
         # resize to original shape to give pixelated look
         img = img.resize(img_size, Image.BICUBIC)
-        # plot result
         img.save(save)
     elif define_new_size == 1:
         reduced_size = (img_size[0] // superpixel_size, img_size[1] // superpixel_size)
         print("___Pixelate___ : superpixel param defines size", reduced_size)    
         img = img.resize(reduced_size, Image.BICUBIC)
         img.save(save)
+        
     elif define_new_size == 2 and new_dim_x is not None:
         ## B, non-rectangular shapes work as well
         print("___Pixelate___ : user defined img size", new_dim_x,new_dim_y )
-        #Function Call for resizing image.
-        # img_resized = photo2pixelart(image=img_name,i_size=(new_dim_x,new_dim_y),o_size=img_size)
         #convert to small image
         small_img=img.resize((new_dim_x,new_dim_y),Image.BILINEAR)
-
-        # plot result
         small_img.save(save)
         
     #### B_end edit    
     
-    # plot result
-    # img.save(save)
 
 if __name__ == "__main__":
 
@@ -96,6 +89,6 @@ if __name__ == "__main__":
 
     kwargs = vars(parser.parse_args())
 
-    print( type(kwargs))
+    print(type(kwargs))
 
     pixellize(**kwargs)

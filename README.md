@@ -32,6 +32,14 @@ It was tested using Pillow 4.0.0 and numpy 1.12.1.
 
 `contrast` is the contrast factor. It is often useful to increase contrast to get better results.
 
+`new_size` is the new size for the output image, three options available currently: 
+> 0. original
+> 1. superpixel size defines output image size
+> 2. user_defined image_size (x_dim, y_dim)
+
+`new_x_dim` is the new pixel size in x dimension.
+
+`new_y_dim` is the new pixel size in x dimension.
 
 If the second argument refers to a folder, by default the name used for saving the processed file will be the same as the original file. An artifact is added if name refers to an existing file. ( B_edit: didn't tested above)
 
