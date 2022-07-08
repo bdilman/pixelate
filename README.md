@@ -22,19 +22,17 @@ It was tested using Pillow 4.0.0 and numpy 1.12.1.
 
 ## Use Case
 
-`python3 main.py examples/aaa.jpg examples/aaa_12.png`
+`python3 main.py examples/jedsy_logo.png examples/test_1.png --num_color 10 --superpixel_size 10 --saturation 1.25 --contrast 1.2`
 
-` B edit parameter allocation is buggy `
+`num_color` is the amount of colors wanted for the output. Small numbers typically give better results.
 
-`python main.py imgs/test.png pixelated/test.png -n 10 -p 10 -s 1.25 -c 1.2`
+`superpixel_size` is the superpixel size. Rule of thumb : the larger the image, the larger the superpixels.
 
-`n` is the amount of colors wanted for the output. Small numbers typically give better results.
+`saturation` is the saturation factor. Saturation helps create similar color zones.
 
-`p` is the superpixel size. Rule of thumb : the larger the image, the larger the superpixels.
+`contrast` is the contrast factor. It is often useful to increase contrast to get better results.
 
-`s` is the saturation factor. Saturation helps create similar color zones.
 
-`c` is the contrast factor. It is often useful to increase contrast to get better results.
+If the second argument refers to a folder, by default the name used for saving the processed file will be the same as the original file. An artifact is added if name refers to an existing file. ( B_edit: didn't tested above)
 
-If the second argument refers to a folder, by default the name used for saving the processed file will be the same as the original file. An artifact is added if name refers to an existing file.
-
+[original work](https://github.com/ferretj/pixelate)
